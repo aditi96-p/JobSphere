@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Resume - JobSphere</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+     ========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        Job<span>Sphere</span>
+    </div>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="jobs.html">Jobs</a>
+        </li>
+
+        <li>
+            <a href="freshers.html">Freshers</a>
+        </li>
+
+        <li>
+            <a href="internships.html">Internships</a>
+        </li>
+
+        <li>
+            <a href="notification.html">Notifications</a>
+        </li>
+
+    </ul>
+
+
+    <div class="nav-buttons">
+
+        <a href="profile.html" class="login-btn">
+            Profile
+        </a>
+
+        <a href="login.html" class="register-btn">
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     PAGE HEADER
+     ========================= -->
+
+<section class="resume-header">
+
+    <div>
+
+        <span class="resume-label">
+            📄 Career Profile
+        </span>
+
+        <h1>
+            Upload Your Resume
+        </h1>
+
+        <p>
+            Keep your resume ready so you can apply
+            for jobs quickly and easily.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     RESUME SECTION
+     ========================= -->
+
+<section class="resume-section">
+
+
+    <div class="resume-container">
+
+
+        <!-- LEFT SIDE -->
+
+        <div class="resume-main">
+
+
+            <!-- UPLOAD CARD -->
+
+            <div class="resume-card">
+
+                <div class="resume-card-heading">
+
+                    <div class="resume-icon">
+                        📄
+                    </div>
+
+                    <div>
+
+                        <h2>
+                            Upload Resume
+                        </h2>
+
+                        <p>
+                            PDF, DOC or DOCX files only
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- DROP AREA -->
+
+                <div
+                    class="upload-area"
+                    id="uploadArea"
+                    onclick="document.getElementById('resumeFile').click()">
+
+
+                    <div class="upload-icon">
+                        ☁️
+                    </div>
+
+
+                    <h3>
+                        Choose your resume
+                    </h3>
+
+
+                    <p>
+                        Click here to select your resume
+                    </p>
+
+
+                    <span>
+                        Maximum file size: 5 MB
+                    </span>
+
+
+                    <input
+                        type="file"
+                        id="resumeFile"
+                        accept=".pdf,.doc,.docx"
+                        onchange="showResume()">
+
+                </div>
+
+
+
+                <!-- SELECTED FILE -->
+
+                <div
+                    class="selected-file"
+                    id="selectedFile"
+                    style="display:none;">
+
+
+                    <div class="file-icon">
+                        📄
+                    </div>
+
+
+                    <div class="file-info">
+
+                        <strong id="fileName">
+                            Resume.pdf
+                        </strong>
+
+                        <small id="fileSize">
+                            0 KB
+                        </small>
+
+                    </div>
+
+
+                    <button
+                        onclick="removeResume()">
+
+                        ×
+
+                    </button>
+
+                </div>
+
+
+
+                <!-- UPLOAD BUTTON -->
+
+                <button
+                    class="upload-resume-button"
+                    onclick="uploadResume()">
+
+                    Upload Resume
+
+                </button>
+
+            </div>
+
+
+
+            <!-- RESUME TIPS -->
+
+            <div class="resume-card">
+
+                <h2>
+                    Resume Tips for Freshers
+                </h2>
+
+
+                <div class="resume-tips">
+
+
+                    <div class="resume-tip">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Keep your resume short and clear,
+                            preferably 1 page.
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume-tip">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Mention your education, technical
+                            skills and projects.
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume-tip">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Add your internship or project
+                            experience if you have any.
+                        </p>
+
+                    </div>
+
+
+                    <div class="resume-tip">
+
+                        <span>
+                            ✓
+                        </span>
+
+                        <p>
+                            Check spelling and contact details
+                            before uploading.
+                        </p>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- RIGHT SIDEBAR -->
+
+        <aside class="resume-sidebar">
+
+
+            <!-- RESUME STATUS -->
+
+            <div class="resume-status-card">
+
+                <div class="status-circle">
+                    ✓
+                </div>
+
+
+                <h3>
+                    Resume Status
+                </h3>
+
+
+                <p id="resumeStatus">
+
+                    No resume uploaded yet.
+
+                </p>
+
+            </div>
+
+
+
+            <!-- QUICK LINKS -->
+
+            <div class="resume-links-card">
+
+                <h3>
+                    Quick Actions
+                </h3>
+
+
+                <a href="profile.html">
+                    👤 My Profile
+                </a>
+
+
+                <a href="freshers.html">
+                    🎓 Fresher Jobs
+                </a>
+
+
+                <a href="internships.html">
+                    💼 Internships
+                </a>
+
+
+                <a href="jobs.html">
+                    🔎 Search Jobs
+                </a>
+
+            </div>
+
+
+
+            <!-- SECURITY -->
+
+            <div class="resume-security">
+
+                <span>
+                    🔒
+                </span>
+
+
+                <div>
+
+                    <h4>
+                        Your Resume is Safe
+                    </h4>
+
+                    <p>
+                        Your resume is used only for
+                        job applications on JobSphere.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <div class="footer-logo">
+                Job<span>Sphere</span>
+            </div>
+
+            <p>
+                Making job search simple, fast and reliable.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="jobs.html">
+                Jobs
+            </a>
+
+            <a href="freshers.html">
+                Freshers
+            </a>
+
+            <a href="internships.html">
+                Internships
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 JobSphere | Job Recruitment Portal
+
+    </div>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,607 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Jobs - JobSphere</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Job<span>Sphere</span>
+        </div>
+
+        <ul class="nav-links">
+
+            <li><a href="index.html">Home</a></li>
+            <li><a href="jobs.html" class="active">Jobs</a></li>
+            <li><a href="freshers.html">Freshers</a></li>
+            <li><a href="internships.html">Internships</a></li>
+            <li><a href="notification.html">Notifications</a></li>
+
+        </ul>
+
+        <div class="nav-buttons">
+
+            <a href="profile.html" class="login-btn">
+                Profile
+            </a>
+
+            <a href="login.html" class="register-btn">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+    <!-- Jobs Header -->
+
+    <section class="jobs-header">
+
+        <h1>
+            Find the Right Job
+        </h1>
+
+        <p>
+            Search verified opportunities and use simple filters
+            to find jobs that match your needs.
+        </p>
+
+    </section>
+
+
+    <!-- Search and Filter Section -->
+
+    <section class="job-filter-section">
+
+        <div class="filter-box">
+
+            <input
+                type="text"
+                id="jobSearch"
+                placeholder="Search job title"
+                onkeyup="filterJobs()">
+
+
+            <select
+                id="locationFilter"
+                onchange="filterJobs()">
+
+                <option value="all">
+                    All Locations
+                </option>
+
+                <option value="Pune">
+                    Pune
+                </option>
+
+                <option value="Mumbai">
+                    Mumbai
+                </option>
+
+                <option value="Bangalore">
+                    Bangalore
+                </option>
+
+                <option value="Remote">
+                    Remote
+                </option>
+
+            </select>
+
+
+            <select
+                id="typeFilter"
+                onchange="filterJobs()">
+
+                <option value="all">
+                    All Job Types
+                </option>
+
+                <option value="Full Time">
+                    Full Time
+                </option>
+
+                <option value="Part Time">
+                    Part Time
+                </option>
+
+                <option value="Remote">
+                    Remote
+                </option>
+
+            </select>
+
+
+            <button onclick="clearFilters()">
+                Clear Filters
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- Main Jobs Area -->
+
+    <section class="jobs-page-section">
+
+        <div class="jobs-title-row">
+
+            <div>
+
+                <h2>
+                    Available Jobs
+                </h2>
+
+                <p>
+                    Browse verified job opportunities.
+                </p>
+
+            </div>
+
+            <span class="verified-note">
+                ✓ Verified opportunities
+            </span>
+
+        </div>
+
+
+        <div class="jobs-list">
+
+
+            <!-- JOB 1 -->
+
+            <div
+                class="job-card job-list-card"
+                data-title="Web Developer"
+                data-location="Pune"
+                data-type="Full Time">
+
+                <div class="job-top">
+
+                    <div class="company-logo">
+                        TS
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Web Developer
+                </h3>
+
+                <p class="company">
+                    Tech Solutions
+                </p>
+
+
+                <div class="job-info">
+
+                    <span>📍 Pune</span>
+
+                    <span>💼 Full Time</span>
+
+                    <span>🎓 0-2 Years Experience</span>
+
+                    <span>💰 ₹3 - ₹5 LPA</span>
+
+                </div>
+
+
+                <p class="job-description">
+                    Looking for a beginner-friendly web developer
+                    with basic knowledge of HTML, CSS and JavaScript.
+                </p>
+
+
+                <button
+                    class="job-apply-button"
+                    onclick="applyJob('Web Developer')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+
+            <!-- JOB 2 -->
+
+            <div
+                class="job-card job-list-card"
+                data-title="UI UX Designer"
+                data-location="Mumbai"
+                data-type="Full Time">
+
+                <div class="job-top">
+
+                    <div class="company-logo">
+                        CD
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    UI/UX Designer
+                </h3>
+
+                <p class="company">
+                    Creative Digital
+                </p>
+
+
+                <div class="job-info">
+
+                    <span>📍 Mumbai</span>
+
+                    <span>💼 Full Time</span>
+
+                    <span>🎓 0-1 Years Experience</span>
+
+                    <span>💰 ₹3.5 - ₹5 LPA</span>
+
+                </div>
+
+
+                <p class="job-description">
+                    Create clean and user-friendly designs for
+                    web and mobile applications.
+                </p>
+
+
+                <button
+                    class="job-apply-button"
+                    onclick="applyJob('UI/UX Designer')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+
+            <!-- JOB 3 -->
+
+            <div
+                class="job-card job-list-card"
+                data-title="Data Analyst"
+                data-location="Bangalore"
+                data-type="Full Time">
+
+                <div class="job-top">
+
+                    <div class="company-logo">
+                        DA
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Data Analyst
+                </h3>
+
+                <p class="company">
+                    DataSphere Technologies
+                </p>
+
+
+                <div class="job-info">
+
+                    <span>📍 Bangalore</span>
+
+                    <span>💼 Full Time</span>
+
+                    <span>🎓 0-2 Years Experience</span>
+
+                    <span>💰 ₹4 - ₹6 LPA</span>
+
+                </div>
+
+
+                <p class="job-description">
+                    Analyze business data and create useful reports
+                    for decision making.
+                </p>
+
+
+                <button
+                    class="job-apply-button"
+                    onclick="applyJob('Data Analyst')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+
+            <!-- JOB 4 -->
+
+            <div
+                class="job-card job-list-card"
+                data-title="Graphic Designer"
+                data-location="Remote"
+                data-type="Remote">
+
+                <div class="job-top">
+
+                    <div class="company-logo">
+                        GD
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Graphic Designer
+                </h3>
+
+                <p class="company">
+                    Pixel Studio
+                </p>
+
+
+                <div class="job-info">
+
+                    <span>📍 Remote</span>
+
+                    <span>🏠 Remote</span>
+
+                    <span>🎓 Fresher Friendly</span>
+
+                    <span>💰 ₹20,000 - ₹30,000 / month</span>
+
+                </div>
+
+
+                <p class="job-description">
+                    Design social media posts, banners and
+                    simple promotional graphics.
+                </p>
+
+
+                <button
+                    class="job-apply-button"
+                    onclick="applyJob('Graphic Designer')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+
+            <!-- JOB 5 -->
+
+            <div
+                class="job-card job-list-card"
+                data-title="Customer Support Executive"
+                data-location="Pune"
+                data-type="Full Time">
+
+                <div class="job-top">
+
+                    <div class="company-logo">
+                        CS
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Customer Support Executive
+                </h3>
+
+                <p class="company">
+                    Connect Services
+                </p>
+
+
+                <div class="job-info">
+
+                    <span>📍 Pune</span>
+
+                    <span>💼 Full Time</span>
+
+                    <span>🎓 Freshers Welcome</span>
+
+                    <span>💰 ₹2.5 - ₹3.5 LPA</span>
+
+                </div>
+
+
+                <p class="job-description">
+                    Help customers with queries and provide
+                    support through calls and emails.
+                </p>
+
+
+                <button
+                    class="job-apply-button"
+                    onclick="applyJob('Customer Support Executive')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+
+            <!-- JOB 6 -->
+
+            <div
+                class="job-card job-list-card"
+                data-title="Content Writer"
+                data-location="Remote"
+                data-type="Part Time">
+
+                <div class="job-top">
+
+                    <div class="company-logo">
+                        CW
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Content Writer
+                </h3>
+
+                <p class="company">
+                    MediaCraft
+                </p>
+
+
+                <div class="job-info">
+
+                    <span>📍 Remote</span>
+
+                    <span>⏰ Part Time</span>
+
+                    <span>🎓 Fresher Friendly</span>
+
+                    <span>💰 ₹15,000 - ₹22,000 / month</span>
+
+                </div>
+
+
+                <p class="job-description">
+                    Write simple website content, blogs and
+                    social media captions.
+                </p>
+
+
+                <button
+                    class="job-apply-button"
+                    onclick="applyJob('Content Writer')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+    <!-- Fresher Quick Banner -->
+
+    <section class="page-bottom-banner">
+
+        <div>
+
+            <h2>
+                Are you a fresher?
+            </h2>
+
+            <p>
+                We have a separate section specially designed
+                for students and recent graduates.
+            </p>
+
+        </div>
+
+        <a href="freshers.html">
+            Explore Fresher Jobs
+        </a>
+
+    </section>
+
+
+    <!-- Footer -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="footer-logo">
+                    Job<span>Sphere</span>
+                </div>
+
+                <p>
+                    Making job search simple, fast and reliable.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">Home</a>
+
+                <a href="jobs.html">Jobs</a>
+
+                <a href="freshers.html">Freshers</a>
+
+                <a href="internships.html">Internships</a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+            © 2026 JobSphere | Job Recruitment Portal
+        </div>
+
+    </footer>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>S

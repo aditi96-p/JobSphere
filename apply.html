@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Apply for Job - JobSphere</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =========================
+     NAVBAR
+     ========================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        Job<span>Sphere</span>
+    </div>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">Home</a>
+        </li>
+
+        <li>
+            <a href="jobs.html">Jobs</a>
+        </li>
+
+        <li>
+            <a href="freshers.html">Freshers</a>
+        </li>
+
+        <li>
+            <a href="internships.html">Internships</a>
+        </li>
+
+        <li>
+            <a href="notification.html">Notifications</a>
+        </li>
+
+    </ul>
+
+
+    <div class="nav-buttons">
+
+        <a href="profile.html" class="login-btn">
+            Profile
+        </a>
+
+        <a href="login.html" class="register-btn">
+            Logout
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =========================
+     PAGE HEADER
+     ========================= -->
+
+<section class="apply-header">
+
+    <div>
+
+        <span class="apply-label">
+            🚀 Career Opportunity
+        </span>
+
+        <h1>
+            Apply for a Job
+        </h1>
+
+        <p>
+            Complete the simple application form
+            and take the next step in your career.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     APPLICATION SECTION
+     ========================= -->
+
+<section class="apply-section">
+
+
+    <div class="apply-container">
+
+
+        <!-- =====================
+             APPLICATION FORM
+             ===================== -->
+
+        <div class="apply-form-card">
+
+
+            <div class="apply-form-heading">
+
+                <h2>
+                    Job Application
+                </h2>
+
+                <p>
+                    Please provide your details carefully.
+                </p>
+
+            </div>
+
+
+
+            <!-- SELECTED JOB -->
+
+            <div class="selected-job">
+
+                <div class="selected-job-logo">
+                    JS
+                </div>
+
+                <div>
+
+                    <h3 id="selectedJob">
+                        Job Application
+                    </h3>
+
+                    <p>
+                        JobSphere Recruitment
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- FORM -->
+
+            <form id="applicationForm"
+                  onsubmit="submitApplication(event)">
+
+
+                <div class="apply-form-row">
+
+
+                    <div class="apply-group">
+
+                        <label>
+                            Full Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="applicantName"
+                            placeholder="Enter your full name"
+                            required>
+
+                    </div>
+
+
+                    <div class="apply-group">
+
+                        <label>
+                            Email Address *
+                        </label>
+
+                        <input
+                            type="email"
+                            id="applicantEmail"
+                            placeholder="Enter your email"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="apply-form-row">
+
+
+                    <div class="apply-group">
+
+                        <label>
+                            Phone Number *
+                        </label>
+
+                        <input
+                            type="tel"
+                            id="applicantPhone"
+                            placeholder="Enter phone number"
+                            required>
+
+                    </div>
+
+
+                    <div class="apply-group">
+
+                        <label>
+                            Experience
+                        </label>
+
+                        <select id="experience">
+
+                            <option>
+                                Fresher
+                            </option>
+
+                            <option>
+                                Less than 1 year
+                            </option>
+
+                            <option>
+                                1-2 years
+                            </option>
+
+                            <option>
+                                2+ years
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- SKILLS -->
+
+                <div class="apply-group">
+
+                    <label>
+                        Key Skills *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="applicantSkills"
+                        placeholder="Example: HTML, CSS, JavaScript, Figma"
+                        required>
+
+                </div>
+
+
+
+                <!-- RESUME -->
+
+                <div class="apply-group">
+
+                    <label>
+                        Resume *
+                    </label>
+
+
+                    <div class="resume-choose">
+
+                        <input
+                            type="file"
+                            id="applicationResume"
+                            accept=".pdf,.doc,.docx"
+                            required>
+
+                    </div>
+
+
+                    <small>
+                        PDF, DOC or DOCX — Maximum 5 MB
+                    </small>
+
+                </div>
+
+
+
+                <!-- COVER MESSAGE -->
+
+                <div class="apply-group">
+
+                    <label>
+                        Short Message
+                    </label>
+
+                    <textarea
+                        id="coverMessage"
+                        rows="5"
+                        placeholder="Write a short message to the recruiter..."></textarea>
+
+                </div>
+
+
+
+                <!-- TERMS -->
+
+                <div class="application-check">
+
+                    <input
+                        type="checkbox"
+                        id="applicationTerms"
+                        required>
+
+                    <label for="applicationTerms">
+
+                        I confirm that the information
+                        provided by me is correct.
+
+                    </label>
+
+                </div>
+
+
+
+                <!-- BUTTON -->
+
+                <button
+                    type="submit"
+                    class="submit-application">
+
+                    Submit Application
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =====================
+             RIGHT SIDEBAR
+             ===================== -->
+
+        <aside class="apply-sidebar">
+
+
+            <!-- VERIFIED -->
+
+            <div class="verified-application-card">
+
+                <div class="large-check">
+                    ✓
+                </div>
+
+                <h3>
+                    Verified Job
+                </h3>
+
+                <p>
+                    This job posting has been reviewed
+                    and verified by JobSphere.
+                </p>
+
+            </div>
+
+
+
+            <!-- APPLICATION STEPS -->
+
+            <div class="application-steps">
+
+                <h3>
+                    Application Process
+                </h3>
+
+
+                <div class="application-step">
+
+                    <span>
+                        01
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Submit Application
+                        </strong>
+
+                        <p>
+                            Fill in your details and apply.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="application-step">
+
+                    <span>
+                        02
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Recruiter Review
+                        </strong>
+
+                        <p>
+                            Recruiter checks your profile.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="application-step">
+
+                    <span>
+                        03
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Shortlisting
+                        </strong>
+
+                        <p>
+                            Selected candidates are contacted.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <div class="application-step">
+
+                    <span>
+                        04
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Interview
+                        </strong>
+
+                        <p>
+                            Attend the interview if shortlisted.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- HELP -->
+
+            <div class="application-help">
+
+                <span>
+                    💡
+                </span>
+
+                <div>
+
+                    <h4>
+                        Application Tip
+                    </h4>
+
+                    <p>
+                        Make sure your resume matches
+                        the skills mentioned in the job.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </aside>
+
+    </div>
+
+</section>
+
+
+
+<!-- =========================
+     SUCCESS POPUP
+     ========================= -->
+
+<div
+    class="application-success"
+    id="applicationSuccess">
+
+
+    <div class="success-box">
+
+        <div class="success-icon">
+            ✓
+        </div>
+
+
+        <h2>
+            Application Submitted!
+        </h2>
+
+
+        <p>
+            Your application has been submitted
+            successfully. The recruiter can now
+            review your profile.
+        </p>
+
+
+        <div class="success-buttons">
+
+            <a
+                href="jobs.html"
+                class="success-button">
+
+                Find More Jobs
+
+            </a>
+
+
+            <a
+                href="notification.html"
+                class="success-outline-button">
+
+                View Notifications
+
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =========================
+     FOOTER
+     ========================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <div class="footer-logo">
+                Job<span>Sphere</span>
+            </div>
+
+            <p>
+                Making job search simple, fast and reliable.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="jobs.html">
+                Jobs
+            </a>
+
+            <a href="freshers.html">
+                Freshers
+            </a>
+
+            <a href="internships.html">
+                Internships
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 JobSphere | Job Recruitment Portal
+
+    </div>
+
+</footer>
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>

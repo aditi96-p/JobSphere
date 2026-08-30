@@ -1,0 +1,978 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Fresher Jobs - JobSphere</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================================
+         NAVIGATION BAR
+         ================================= -->
+
+    <nav class="navbar">
+
+        <div class="logo">
+            Job<span>Sphere</span>
+        </div>
+
+
+        <ul class="nav-links">
+
+            <li>
+                <a href="index.html">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="jobs.html">
+                    Jobs
+                </a>
+            </li>
+
+            <li>
+                <a href="freshers.html" class="active">
+                    Freshers
+                </a>
+            </li>
+
+            <li>
+                <a href="internships.html">
+                    Internships
+                </a>
+            </li>
+
+            <li>
+                <a href="notification.html">
+                    Notifications
+                </a>
+            </li>
+
+        </ul>
+
+
+        <div class="nav-buttons">
+
+            <a href="profile.html" class="login-btn">
+                Profile
+            </a>
+
+            <a href="login.html" class="register-btn">
+                Login
+            </a>
+
+        </div>
+
+    </nav>
+
+
+
+    <!-- ================================
+         FRESHER HERO
+         ================================= -->
+
+    <section class="fresher-hero">
+
+        <div class="fresher-hero-content">
+
+            <span class="fresher-label">
+                🎓 Specially for Freshers
+            </span>
+
+
+            <h1>
+                Start Your Career
+                With Confidence
+            </h1>
+
+
+            <p>
+                Find beginner-friendly jobs designed for
+                students and recent graduates. No complicated
+                experience requirements.
+            </p>
+
+
+            <div class="fresher-buttons">
+
+                <a href="#fresherJobs" class="main-button">
+                    Explore Jobs
+                </a>
+
+                <a href="profile.html" class="outline-button">
+                    Create Profile
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="fresher-hero-card">
+
+            <div class="fresher-big-icon">
+                🎓
+            </div>
+
+            <h3>
+                Freshers Friendly
+            </h3>
+
+            <p>
+                Jobs with 0-2 years of experience
+                requirements.
+            </p>
+
+
+            <div class="fresher-mini-stats">
+
+                <div>
+
+                    <strong>
+                        200+
+                    </strong>
+
+                    <small>
+                        Jobs
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        80+
+                    </strong>
+
+                    <small>
+                        Companies
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        50+
+                    </strong>
+
+                    <small>
+                        Skills
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         FRESHER FILTERS
+         ================================= -->
+
+    <section class="fresher-filter-section">
+
+        <div class="fresher-filter-box">
+
+            <div class="filter-heading">
+
+                <h3>
+                    Find a Fresher Job
+                </h3>
+
+                <p>
+                    Use filters to find the right opportunity.
+                </p>
+
+            </div>
+
+
+            <div class="fresher-filters">
+
+
+                <!-- Search -->
+
+                <input
+                    type="text"
+                    id="fresherSearch"
+                    placeholder="Search job title..."
+                    onkeyup="filterFreshers()">
+
+
+
+                <!-- Location -->
+
+                <select
+                    id="fresherLocation"
+                    onchange="filterFreshers()">
+
+                    <option value="all">
+                        All Locations
+                    </option>
+
+                    <option value="Pune">
+                        Pune
+                    </option>
+
+                    <option value="Mumbai">
+                        Mumbai
+                    </option>
+
+                    <option value="Bangalore">
+                        Bangalore
+                    </option>
+
+                    <option value="Remote">
+                        Remote
+                    </option>
+
+                </select>
+
+
+
+                <!-- Job Type -->
+
+                <select
+                    id="fresherType"
+                    onchange="filterFreshers()">
+
+                    <option value="all">
+                        Job Type
+                    </option>
+
+                    <option value="Full Time">
+                        Full Time
+                    </option>
+
+                    <option value="Part Time">
+                        Part Time
+                    </option>
+
+                </select>
+
+
+
+                <!-- Work Mode -->
+
+                <select
+                    id="fresherMode"
+                    onchange="filterFreshers()">
+
+                    <option value="all">
+                        Work Mode
+                    </option>
+
+                    <option value="Office">
+                        Office
+                    </option>
+
+                    <option value="Hybrid">
+                        Hybrid
+                    </option>
+
+                    <option value="Remote">
+                        Remote
+                    </option>
+
+                </select>
+
+
+                <button
+                    onclick="clearFresherFilters()">
+
+                    Clear
+
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         FRESHER JOBS
+         ================================= -->
+
+    <section
+        class="fresher-jobs-section"
+        id="fresherJobs">
+
+
+        <div class="fresher-title-row">
+
+            <div>
+
+                <h2>
+                    Fresher Opportunities
+                </h2>
+
+                <p>
+                    Start your professional journey with
+                    these beginner-friendly jobs.
+                </p>
+
+            </div>
+
+
+            <span class="fresher-count">
+                🎓 Freshers Welcome
+            </span>
+
+        </div>
+
+
+
+        <div class="fresher-job-grid">
+
+
+            <!-- ================= JOB 1 ================= -->
+
+            <div
+                class="fresher-job-card"
+
+                data-title="Junior Web Developer"
+
+                data-location="Pune"
+
+                data-type="Full Time"
+
+                data-mode="Office">
+
+
+                <div class="fresher-card-top">
+
+                    <div class="company-logo">
+                        TS
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Junior Web Developer
+                </h3>
+
+
+                <p class="company">
+                    Tech Solutions
+                </p>
+
+
+                <div class="fresher-tags">
+
+                    <span>
+                        🎓 Fresher
+                    </span>
+
+                    <span>
+                        💼 Full Time
+                    </span>
+
+                    <span>
+                        📍 Pune
+                    </span>
+
+                </div>
+
+
+                <p class="fresher-description">
+
+                    Perfect opportunity for beginners with
+                    basic HTML, CSS and JavaScript knowledge.
+
+                </p>
+
+
+                <div class="salary">
+                    ₹3 - ₹5 LPA
+                </div>
+
+
+                <button
+                    class="job-apply-button"
+
+                    onclick="applyJob('Junior Web Developer')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= JOB 2 ================= -->
+
+            <div
+                class="fresher-job-card"
+
+                data-title="Graduate Software Trainee"
+
+                data-location="Mumbai"
+
+                data-type="Full Time"
+
+                data-mode="Hybrid">
+
+
+                <div class="fresher-card-top">
+
+                    <div class="company-logo">
+                        IN
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Graduate Software Trainee
+                </h3>
+
+
+                <p class="company">
+                    Innovate Technologies
+                </p>
+
+
+                <div class="fresher-tags">
+
+                    <span>
+                        🎓 Fresher
+                    </span>
+
+                    <span>
+                        💼 Full Time
+                    </span>
+
+                    <span>
+                        📍 Mumbai
+                    </span>
+
+                </div>
+
+
+                <p class="fresher-description">
+
+                    Training-based role for graduates who want
+                    to begin their software development career.
+
+                </p>
+
+
+                <div class="salary">
+                    ₹3.5 - ₹5 LPA
+                </div>
+
+
+                <button
+                    class="job-apply-button"
+
+                    onclick="applyJob('Graduate Software Trainee')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= JOB 3 ================= -->
+
+            <div
+                class="fresher-job-card"
+
+                data-title="UI UX Designer"
+
+                data-location="Remote"
+
+                data-type="Full Time"
+
+                data-mode="Remote">
+
+
+                <div class="fresher-card-top">
+
+                    <div class="company-logo">
+                        CD
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Junior UI/UX Designer
+                </h3>
+
+
+                <p class="company">
+                    Creative Digital
+                </p>
+
+
+                <div class="fresher-tags">
+
+                    <span>
+                        🎓 Fresher
+                    </span>
+
+                    <span>
+                        💼 Full Time
+                    </span>
+
+                    <span>
+                        🏠 Remote
+                    </span>
+
+                </div>
+
+
+                <p class="fresher-description">
+
+                    Create simple and user-friendly interfaces
+                    for websites and mobile applications.
+
+                </p>
+
+
+                <div class="salary">
+                    ₹3 - ₹4.5 LPA
+                </div>
+
+
+                <button
+                    class="job-apply-button"
+
+                    onclick="applyJob('Junior UI/UX Designer')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= JOB 4 ================= -->
+
+            <div
+                class="fresher-job-card"
+
+                data-title="Data Analyst Trainee"
+
+                data-location="Bangalore"
+
+                data-type="Full Time"
+
+                data-mode="Office">
+
+
+                <div class="fresher-card-top">
+
+                    <div class="company-logo">
+                        DS
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Data Analyst Trainee
+                </h3>
+
+
+                <p class="company">
+                    DataSphere
+                </p>
+
+
+                <div class="fresher-tags">
+
+                    <span>
+                        🎓 Fresher
+                    </span>
+
+                    <span>
+                        💼 Full Time
+                    </span>
+
+                    <span>
+                        📍 Bangalore
+                    </span>
+
+                </div>
+
+
+                <p class="fresher-description">
+
+                    Work with business data and create reports
+                    while learning practical data analysis.
+
+                </p>
+
+
+                <div class="salary">
+                    ₹4 - ₹5.5 LPA
+                </div>
+
+
+                <button
+                    class="job-apply-button"
+
+                    onclick="applyJob('Data Analyst Trainee')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= JOB 5 ================= -->
+
+            <div
+                class="fresher-job-card"
+
+                data-title="Customer Support Executive"
+
+                data-location="Pune"
+
+                data-type="Full Time"
+
+                data-mode="Office">
+
+
+                <div class="fresher-card-top">
+
+                    <div class="company-logo">
+                        CS
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Customer Support Executive
+                </h3>
+
+
+                <p class="company">
+                    Connect Services
+                </p>
+
+
+                <div class="fresher-tags">
+
+                    <span>
+                        🎓 Fresher
+                    </span>
+
+                    <span>
+                        💼 Full Time
+                    </span>
+
+                    <span>
+                        📍 Pune
+                    </span>
+
+                </div>
+
+
+                <p class="fresher-description">
+
+                    Help customers solve their questions through
+                    calls, email and online support.
+
+                </p>
+
+
+                <div class="salary">
+                    ₹2.5 - ₹3.5 LPA
+                </div>
+
+
+                <button
+                    class="job-apply-button"
+
+                    onclick="applyJob('Customer Support Executive')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+
+            <!-- ================= JOB 6 ================= -->
+
+            <div
+                class="fresher-job-card"
+
+                data-title="Digital Marketing Executive"
+
+                data-location="Mumbai"
+
+                data-type="Full Time"
+
+                data-mode="Hybrid">
+
+
+                <div class="fresher-card-top">
+
+                    <div class="company-logo">
+                        DM
+                    </div>
+
+                    <span class="verified">
+                        ✓ Verified
+                    </span>
+
+                </div>
+
+
+                <h3>
+                    Digital Marketing Executive
+                </h3>
+
+
+                <p class="company">
+                    MarketPro
+                </p>
+
+
+                <div class="fresher-tags">
+
+                    <span>
+                        🎓 Fresher
+                    </span>
+
+                    <span>
+                        💼 Full Time
+                    </span>
+
+                    <span>
+                        📍 Mumbai
+                    </span>
+
+                </div>
+
+
+                <p class="fresher-description">
+
+                    Assist with social media, online campaigns
+                    and digital marketing activities.
+
+                </p>
+
+
+                <div class="salary">
+                    ₹2.5 - ₹4 LPA
+                </div>
+
+
+                <button
+                    class="job-apply-button"
+
+                    onclick="applyJob('Digital Marketing Executive')">
+
+                    Apply Now
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         FRESHER TIPS
+         ================================= -->
+
+    <section class="fresher-tips">
+
+        <div class="section-heading">
+
+            <h2>
+                New to Job Searching?
+            </h2>
+
+            <p>
+                Follow these simple steps to get started.
+            </p>
+
+        </div>
+
+
+        <div class="tips-container">
+
+
+            <div class="tip-card">
+
+                <div class="tip-number">
+                    01
+                </div>
+
+                <h3>
+                    Create Profile
+                </h3>
+
+                <p>
+                    Add your education, skills and basic
+                    information.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <div class="tip-number">
+                    02
+                </div>
+
+                <h3>
+                    Upload Resume
+                </h3>
+
+                <p>
+                    Add your latest resume so recruiters
+                    can understand your skills.
+                </p>
+
+            </div>
+
+
+            <div class="tip-card">
+
+                <div class="tip-number">
+                    03
+                </div>
+
+                <h3>
+                    Apply Easily
+                </h3>
+
+                <p>
+                    Find a suitable job and click
+                    Apply Now.
+                </p>
+
+            </div>
+
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================================
+         FOOTER
+         ================================= -->
+
+    <footer>
+
+        <div class="footer-content">
+
+            <div>
+
+                <div class="footer-logo">
+                    Job<span>Sphere</span>
+                </div>
+
+                <p>
+                    Making job search simple, fast and reliable.
+                </p>
+
+            </div>
+
+
+            <div class="footer-links">
+
+                <a href="index.html">
+                    Home
+                </a>
+
+                <a href="jobs.html">
+                    Jobs
+                </a>
+
+                <a href="freshers.html">
+                    Freshers
+                </a>
+
+                <a href="internships.html">
+                    Internships
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="footer-bottom">
+
+            © 2026 JobSphere | Job Recruitment Portal
+
+        </div>
+
+    </footer>
+
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>

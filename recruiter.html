@@ -1,0 +1,981 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Recruiter Dashboard - JobSphere</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap"
+        rel="stylesheet">
+
+</head>
+
+
+<body>
+
+
+<!-- =================================
+     NAVBAR
+     ================================= -->
+
+<nav class="navbar">
+
+    <div class="logo">
+        Job<span>Sphere</span>
+    </div>
+
+
+    <ul class="nav-links">
+
+        <li>
+            <a href="index.html">
+                Home
+            </a>
+        </li>
+
+        <li>
+            <a href="jobs.html">
+                Jobs
+            </a>
+        </li>
+
+        <li>
+            <a href="freshers.html">
+                Freshers
+            </a>
+        </li>
+
+        <li>
+            <a href="internships.html">
+                Internships
+            </a>
+        </li>
+
+        <li>
+            <a href="notification.html">
+                Notifications
+            </a>
+        </li>
+
+    </ul>
+
+
+    <div class="nav-buttons">
+
+        <a
+            href="recruiter.html"
+            class="login-btn">
+
+            Recruiter
+
+        </a>
+
+
+        <a
+            href="login.html"
+            class="register-btn">
+
+            Logout
+
+        </a>
+
+    </div>
+
+</nav>
+
+
+
+<!-- =================================
+     DASHBOARD HEADER
+     ================================= -->
+
+<section class="recruiter-header">
+
+    <div class="recruiter-header-content">
+
+
+        <div>
+
+            <span class="recruiter-label">
+                👔 Recruiter Portal
+            </span>
+
+
+            <h1>
+                Recruiter Dashboard
+            </h1>
+
+
+            <p>
+                Find talented candidates and manage
+                your job openings from one place.
+            </p>
+
+        </div>
+
+
+        <button
+            class="post-job-header-button"
+            onclick="openJobForm()">
+
+            + Post New Job
+
+        </button>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     STATISTICS
+     ================================= -->
+
+<section class="recruiter-stats-section">
+
+
+    <div class="recruiter-stats">
+
+
+        <div class="recruiter-stat-card">
+
+            <div class="recruiter-stat-icon">
+                💼
+            </div>
+
+            <div>
+
+                <strong id="totalJobs">
+                    3
+                </strong>
+
+                <p>
+                    Active Jobs
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="recruiter-stat-card">
+
+            <div class="recruiter-stat-icon">
+                👥
+            </div>
+
+            <div>
+
+                <strong id="totalApplications">
+                    24
+                </strong>
+
+                <p>
+                    Applications
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="recruiter-stat-card">
+
+            <div class="recruiter-stat-icon">
+                ⭐
+            </div>
+
+            <div>
+
+                <strong id="shortlisted">
+                    8
+                </strong>
+
+                <p>
+                    Shortlisted
+                </p>
+
+            </div>
+
+        </div>
+
+
+
+        <div class="recruiter-stat-card">
+
+            <div class="recruiter-stat-icon">
+                ✓
+            </div>
+
+            <div>
+
+                <strong>
+                    100%
+                </strong>
+
+                <p>
+                    Verified Profile
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     MAIN DASHBOARD
+     ================================= -->
+
+<section class="recruiter-dashboard">
+
+
+    <div class="recruiter-dashboard-container">
+
+
+        <!-- =================================
+             POST JOB FORM
+             ================================= -->
+
+        <div
+            class="post-job-card"
+            id="jobFormCard"
+            style="display:none;">
+
+
+            <div class="dashboard-card-heading">
+
+                <div>
+
+                    <h2>
+                        Post a New Job
+                    </h2>
+
+                    <p>
+                        Add simple details about the job opening.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-form-button"
+                    onclick="closeJobForm()">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+
+            <form
+                id="postJobForm"
+                onsubmit="postNewJob(event)">
+
+
+                <div class="recruiter-form-row">
+
+
+                    <div class="recruiter-form-group">
+
+                        <label>
+                            Job Title *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="jobTitle"
+                            placeholder="Example: UI/UX Designer"
+                            required>
+
+                    </div>
+
+
+                    <div class="recruiter-form-group">
+
+                        <label>
+                            Company Name *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="companyName"
+                            placeholder="Example: Tech Solutions"
+                            required>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="recruiter-form-row">
+
+
+                    <div class="recruiter-form-group">
+
+                        <label>
+                            Location *
+                        </label>
+
+                        <input
+                            type="text"
+                            id="jobLocation"
+                            placeholder="Example: Pune"
+                            required>
+
+                    </div>
+
+
+                    <div class="recruiter-form-group">
+
+                        <label>
+                            Job Type
+                        </label>
+
+                        <select id="jobType">
+
+                            <option>
+                                Full Time
+                            </option>
+
+                            <option>
+                                Part Time
+                            </option>
+
+                            <option>
+                                Internship
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="recruiter-form-row">
+
+
+                    <div class="recruiter-form-group">
+
+                        <label>
+                            Salary / Stipend
+                        </label>
+
+                        <input
+                            type="text"
+                            id="jobSalary"
+                            placeholder="Example: ₹4 - ₹6 LPA">
+
+                    </div>
+
+
+                    <div class="recruiter-form-group">
+
+                        <label>
+                            Work Mode
+                        </label>
+
+                        <select id="jobMode">
+
+                            <option>
+                                Office
+                            </option>
+
+                            <option>
+                                Hybrid
+                            </option>
+
+                            <option>
+                                Remote
+                            </option>
+
+                        </select>
+
+                    </div>
+
+                </div>
+
+
+
+                <div class="recruiter-form-group">
+
+                    <label>
+                        Required Skills *
+                    </label>
+
+                    <input
+                        type="text"
+                        id="jobSkills"
+                        placeholder="Example: HTML, CSS, Figma"
+                        required>
+
+                </div>
+
+
+
+                <div class="recruiter-form-group">
+
+                    <label>
+                        Job Description *
+                    </label>
+
+                    <textarea
+                        id="jobDescription"
+                        rows="5"
+                        placeholder="Describe the job responsibilities..."
+                        required></textarea>
+
+                </div>
+
+
+
+                <button
+                    type="submit"
+                    class="post-job-button">
+
+                    Publish Job
+
+                </button>
+
+
+            </form>
+
+        </div>
+
+
+
+        <!-- =================================
+             POSTED JOBS
+             ================================= -->
+
+        <div class="posted-jobs-card">
+
+
+            <div class="dashboard-card-heading">
+
+                <div>
+
+                    <h2>
+                        Your Job Openings
+                    </h2>
+
+                    <p>
+                        Manage your currently posted jobs.
+                    </p>
+
+                </div>
+
+
+                <span class="active-job-badge">
+                    ● Active
+                </span>
+
+            </div>
+
+
+
+            <div
+                class="posted-jobs-list"
+                id="postedJobsList">
+
+
+                <!-- JOB 1 -->
+
+                <div class="posted-job-item">
+
+                    <div class="posted-job-info">
+
+                        <div class="posted-company-logo">
+                            TS
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                UI/UX Designer
+                            </h3>
+
+                            <p>
+                                Tech Solutions · Pune
+                            </p>
+
+                            <div class="posted-job-tags">
+
+                                <span>
+                                    Full Time
+                                </span>
+
+                                <span>
+                                    Hybrid
+                                </span>
+
+                                <span class="verified">
+                                    ✓ Verified
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="posted-job-actions">
+
+                        <span class="application-number">
+                            12 Applicants
+                        </span>
+
+
+                        <button
+                            onclick="viewApplications('UI/UX Designer')">
+
+                            View Applications
+
+                        </button>
+
+
+                        <button
+                            class="delete-job"
+                            onclick="deleteJob(this)">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- JOB 2 -->
+
+                <div class="posted-job-item">
+
+                    <div class="posted-job-info">
+
+                        <div class="posted-company-logo">
+                            DC
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Frontend Developer
+                            </h3>
+
+                            <p>
+                                Digital Corp · Mumbai
+                            </p>
+
+                            <div class="posted-job-tags">
+
+                                <span>
+                                    Full Time
+                                </span>
+
+                                <span>
+                                    Office
+                                </span>
+
+                                <span class="verified">
+                                    ✓ Verified
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="posted-job-actions">
+
+                        <span class="application-number">
+                            8 Applicants
+                        </span>
+
+
+                        <button
+                            onclick="viewApplications('Frontend Developer')">
+
+                            View Applications
+
+                        </button>
+
+
+                        <button
+                            class="delete-job"
+                            onclick="deleteJob(this)">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+
+                <!-- JOB 3 -->
+
+                <div class="posted-job-item">
+
+                    <div class="posted-job-info">
+
+                        <div class="posted-company-logo">
+                            AI
+                        </div>
+
+
+                        <div>
+
+                            <h3>
+                                Data Analyst Intern
+                            </h3>
+
+                            <p>
+                                Analytics Inc · Remote
+                            </p>
+
+                            <div class="posted-job-tags">
+
+                                <span>
+                                    Internship
+                                </span>
+
+                                <span>
+                                    Remote
+                                </span>
+
+                                <span class="verified">
+                                    ✓ Verified
+                                </span>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="posted-job-actions">
+
+                        <span class="application-number">
+                            4 Applicants
+                        </span>
+
+
+                        <button
+                            onclick="viewApplications('Data Analyst Intern')">
+
+                            View Applications
+
+                        </button>
+
+
+                        <button
+                            class="delete-job"
+                            onclick="deleteJob(this)">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </div>
+
+
+
+        <!-- =================================
+             APPLICATIONS
+             ================================= -->
+
+        <div
+            class="applications-card"
+            id="applicationsCard"
+            style="display:none;">
+
+
+            <div class="dashboard-card-heading">
+
+                <div>
+
+                    <h2>
+                        Applications
+                    </h2>
+
+                    <p id="applicationJobName">
+                        Candidates who applied for this job.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="close-form-button"
+                    onclick="closeApplications()">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+
+            <!-- CANDIDATE 1 -->
+
+            <div class="candidate-item">
+
+                <div class="candidate-avatar">
+                    AR
+                </div>
+
+
+                <div class="candidate-info">
+
+                    <h3>
+                        Aarav R.
+                    </h3>
+
+                    <p>
+                        BSc Computer Application · Pune
+                    </p>
+
+                    <div class="candidate-skills">
+
+                        HTML · CSS · JavaScript · Figma
+
+                    </div>
+
+                </div>
+
+
+                <div class="candidate-actions">
+
+                    <button
+                        class="view-resume"
+                        onclick="viewResume()">
+
+                        Resume
+
+                    </button>
+
+
+                    <button
+                        class="shortlist-button"
+                        onclick="shortlistCandidate(this)">
+
+                        Shortlist
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CANDIDATE 2 -->
+
+            <div class="candidate-item">
+
+                <div class="candidate-avatar">
+                    SP
+                </div>
+
+
+                <div class="candidate-info">
+
+                    <h3>
+                        Siya P.
+                    </h3>
+
+                    <p>
+                        BCA · Mumbai
+                    </p>
+
+                    <div class="candidate-skills">
+
+                        Figma · UI/UX · Photoshop
+
+                    </div>
+
+                </div>
+
+
+                <div class="candidate-actions">
+
+                    <button
+                        class="view-resume"
+                        onclick="viewResume()">
+
+                        Resume
+
+                    </button>
+
+
+                    <button
+                        class="shortlist-button"
+                        onclick="shortlistCandidate(this)">
+
+                        Shortlist
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- CANDIDATE 3 -->
+
+            <div class="candidate-item">
+
+                <div class="candidate-avatar">
+                    RK
+                </div>
+
+
+                <div class="candidate-info">
+
+                    <h3>
+                        Rohan K.
+                    </h3>
+
+                    <p>
+                        BSc IT · Bangalore
+                    </p>
+
+                    <div class="candidate-skills">
+
+                        HTML · JavaScript · React
+
+                    </div>
+
+                </div>
+
+
+                <div class="candidate-actions">
+
+                    <button
+                        class="view-resume"
+                        onclick="viewResume()">
+
+                        Resume
+
+                    </button>
+
+
+                    <button
+                        class="shortlist-button"
+                        onclick="shortlistCandidate(this)">
+
+                        Shortlist
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- =================================
+     FOOTER
+     ================================= -->
+
+<footer>
+
+    <div class="footer-content">
+
+        <div>
+
+            <div class="footer-logo">
+                Job<span>Sphere</span>
+            </div>
+
+            <p>
+                Making job search simple, fast and reliable.
+            </p>
+
+        </div>
+
+
+        <div class="footer-links">
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="jobs.html">
+                Jobs
+            </a>
+
+            <a href="freshers.html">
+                Freshers
+            </a>
+
+            <a href="internships.html">
+                Internships
+            </a>
+
+        </div>
+
+    </div>
+
+
+    <div class="footer-bottom">
+
+        © 2026 JobSphere | Job Recruitment Portal
+
+    </div>
+
+</footer>
+
+
+
+<script src="script.js"></script>
+
+</body>
+
+</html>
