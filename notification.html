@@ -22,27 +22,31 @@
 </head>
 
 
-<body class="notifications-page">
+<body class="notification-page">
 
 
-    <!-- NAVBAR -->
+    <!-- ================= NAVBAR ================= -->
 
-    <nav class="navbar">
+    <nav class="notification-navbar">
 
-        <a href="index.html" class="logo">
+        <!-- LOGO -->
+
+        <a href="index.html" class="notification-logo">
 
             <img
                 src="images/logo.png"
                 alt="JobSphere Logo">
 
-            <h2>
+            <span>
                 Job<span>Sphere</span>
-            </h2>
+            </span>
 
         </a>
 
 
-        <div class="nav-links">
+        <!-- NAVIGATION -->
+
+        <div class="notification-nav-links">
 
             <a href="index.html">
                 Home
@@ -60,8 +64,12 @@
                 Internships
             </a>
 
-            <a href="notifications.html" class="active">
-                 Notifications
+            <a
+                href="notifications.html"
+                class="notification-active">
+
+                🔔 Notifications
+
             </a>
 
         </div>
@@ -70,34 +78,36 @@
 
 
 
-    <!-- NOTIFICATIONS CONTENT -->
+    <!-- ================= MAIN CONTENT ================= -->
 
-    <main class="notifications-container">
+    <main class="notification-main">
 
 
-        <div class="notifications-header">
+        <!-- PAGE HEADING -->
+
+        <div class="notification-heading">
 
             <h1>
                 Notifications
             </h1>
 
             <p>
-                Stay updated with your JobSphere activities.
+                Stay updated with your latest JobSphere activities.
             </p>
 
         </div>
 
 
 
-        <!-- Notification 1 -->
+        <!-- ================= NOTIFICATION 1 ================= -->
 
         <div class="notification-card">
 
-            <div class="notification-icon">
+            <div class="notification-card-icon">
                 ✓
             </div>
 
-            <div class="notification-content">
+            <div class="notification-card-content">
 
                 <h3>
                     Application Submitted
@@ -108,9 +118,9 @@
                     was submitted successfully.
                 </p>
 
-                <span>
+                <small>
                     Just now
-                </span>
+                </small>
 
             </div>
 
@@ -118,15 +128,15 @@
 
 
 
-        <!-- Notification 2 -->
+        <!-- ================= NOTIFICATION 2 ================= -->
 
         <div class="notification-card">
 
-            <div class="notification-icon">
-                
+            <div class="notification-card-icon">
+                💼
             </div>
 
-            <div class="notification-content">
+            <div class="notification-card-content">
 
                 <h3>
                     New Internship Available
@@ -134,11 +144,12 @@
 
                 <p>
                     A new UI/UX Design Internship is available.
+                    Check it out and apply today.
                 </p>
 
-                <span>
+                <small>
                     2 hours ago
-                </span>
+                </small>
 
             </div>
 
@@ -146,27 +157,57 @@
 
 
 
-        <!-- Notification 3 -->
+        <!-- ================= NOTIFICATION 3 ================= -->
 
         <div class="notification-card">
 
-            <div class="notification-icon">
-                
+            <div class="notification-card-icon">
+                📄
             </div>
 
-            <div class="notification-content">
+            <div class="notification-card-content">
 
                 <h3>
                     Resume Reminder
                 </h3>
 
                 <p>
-                    Upload your resume to apply for jobs faster.
+                    Upload your resume to apply for jobs
+                    faster and increase your chances.
                 </p>
 
-                <span>
+                <small>
                     Yesterday
-                </span>
+                </small>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ================= NOTIFICATION 4 ================= -->
+
+        <div class="notification-card">
+
+            <div class="notification-card-icon">
+                ✓
+            </div>
+
+            <div class="notification-card-content">
+
+                <h3>
+                    Verified Job Alert
+                </h3>
+
+                <p>
+                    New verified job opportunities matching
+                    your interests are now available.
+                </p>
+
+                <small>
+                    2 days ago
+                </small>
 
             </div>
 
@@ -175,9 +216,6 @@
 
     </main>
 
-
-
-    <script src="script.js"></script>
 
 </body>
 
